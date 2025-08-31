@@ -1,0 +1,34 @@
+function augmentedImage = projectCuboidsToImage(I, intrinsics, tagPose, lines, wallHeight, wallThickness)
+    % Initialize
+    augmentedImage = I;
+
+    for i = 1:size(lines,1)
+        line2D = lines(i, :);
+
+        % Step 1: Create 3D cuboid from 2D line
+        cuboidVertices = createCuboidFromLine(line2D, wallHeight, wallThickness);
+
+        % Step 2: Project 3D points to image plane
+        projectedPoints = worl(intrinsics, tagPose, cuboidVertices);
+
+        % Step 3: Define cuboid edges using vertex indices
+        edges = [
+            1 2; 2 3; 3 4; 4 1;    % bottom rectangle
+            5 6; 6 7; 7 8; 8 5;    % top rectangle
+            1 5; 2 6; 3 7; 4 8     % vertical edges
+        ];
+
+        % Step 4: Flatten edge data for insertShape
+        linesToDraw = [];
+        for j = 1:size(edges,1)
+            pt1 = projectedPoints(edges(j,1), :);
+            pt2 = projectedPoints(edges(j,2), :);
+            linesToDraw = [linesToDraw; pt1 pt2];
+        end
+
+        % Step 5: Draw cuboid onto image
+        augmentedImage = insertShape(augmentedImage, 'Line', linesToDraw, ...
+                                     'Color', 'green', 'LineWidth', 3);
+    end
+    
+end
