@@ -1,6 +1,8 @@
 # Augmented-Reality-Matlab-Capstone-Final-Project
 This application augments a 3d virtual image of a building on a live video feed of a floor plan
-Click this You Tube Link for a walkthroughL https://youtu.be/U2FcMjs6qOc
+
+
+Click this You Tube Link for a walkthrough of the project: https://youtu.be/U2FcMjs6qOc
 
 # How To Use This Application
 
