@@ -14,16 +14,16 @@ The 2D architectural floor plan made available here is custom made and it incopo
 - Load the camera intrinsics and calculate the tag pose with the help of the april tag.
 - Erase out the april tag, as it will be a source of interferance during feauture extraction.
 - Isolate the document. That is eliminate any background in the natural image, such as a table surface and only the contents of the document should be in view. By doing this we move from a normal image coordinate sytem to a different coordinate system (we can call it the crooped image coordinate system).
-- Once we have a document with no april tag and no background, we begin feauture extraction.
+- Once with document with no april tag and no background, feauture extraction begins.
 - We begin with the extraction of wall marker feautures that is line segments. This can be done with a line detection algorithm.
-- The Window markers and door markers are also made up of lines so we erase them first. Window and door markers have to first be identified before they are erased.
-- To identify window markers, run a rectangle detection algorithm, this identifies all window markers and encloses them in bounding boxes.
+- The Window markers and door markers are also made up of lines so they are erased first. Window and door markers have first to be identified before they are erased.
+- To identify window markers, run a rectangle detection algorithm, this detects all window markers and encloses them in bounding boxes.
 - With the bounding boxes localizing the window markers, the window markers can be erased.
-- To identify door markers, run a right angled traingle detection algorithm, this identifies all door markers and encloses them in bounding boxes.
+- To identify door markers, run a right angled traingle detection algorithm, this detects all door markers and encloses them in bounding boxes.
 - The door markers are also erased after being localized with bounding boxes.
-- With window and door markers removed, run a line detection algorithm, this detects all line segments in the image and hence the wall markers.
+- With window and door markers erased, run a line detection algorithm, this detects all line segments in the image and hence the wall markers.
 - With the wall features extracted, the next step is to determine the window placement position.
-- Each window marker is a gridded rectangle basically 3 parallel long lines and 3 short lines perpendicular to the long lines. The floor plan was designed such that each window marker is between 2 wall markers(line segments) and the middle of the 3 long lines is colinear to the 2 surrounding wall markers.
+- Each window marker is a gridded rectangle, basically 3 parallel long lines of equal length and 3 short lines also of equal length perpendicular to the long lines. The floor plan was designed such that each window marker is between 2 wall markers(line segments) and the middle of the 3 long lines is colinear to the 2 surrounding wall markers.
 - The closest endpoints to the window marker of the 2 surrounding wall markers, is most convenient to place the windows.
 - Using the fact that one of the lines making up the window markers is colinear to the surrounding wall markers, this can be used to extract placement positions for the windows.
 - Using the bounding boxes enclosing the window markers, run a localized line detection algorithm to detect the lines making up the window marker.
