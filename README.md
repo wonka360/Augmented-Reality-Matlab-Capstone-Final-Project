@@ -54,7 +54,7 @@ Save the .mat file generated i.e calibrationSession.mat in the root directory 'A
 
 3.) Open the file 'AR_runtime_script.mlx' in the root directory and then in line 16 change the name of the image file to the corresponding name of the reference image.
 
-4.) In line 22 and 27, if a different name was given to the .mat file generated containing camara parameters then change calibrationSession.mat and put the new name of the file given.
+4.) In line 22 and 27, if a different name was given to the .mat file generated containing camara parameters then change calibrationSession.mat to the new name of the file given.
 
 5.) In line 551 change 'DroidCam Source' and instead put the name of the webcamera taking the video feed. Note that the webcamera taking the feed must be thesame camera that took the reference picture.
 
