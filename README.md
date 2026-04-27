@@ -45,6 +45,7 @@ Save the .mat file generated i.e calibrationSession.mat in the root directory 'A
 
 
 # Things To Do Before Running The Application
+Download the folder 'AR Capstone Matlab 2.0' open in either matlab online or matlab desktop and do the following.
 
 1.) Navigate to the sub directory 'Floor Plan Prints' this folder contains, documents of simplified floor plans. Take a Printout of one of these documents.
 
