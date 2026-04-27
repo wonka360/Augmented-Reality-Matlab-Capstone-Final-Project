@@ -1,8 +1,11 @@
 # Augmented-Reality-Matlab-Capstone-Final-Project
-This application augments a 3d virtual image of a building on a live video feed of a floor plan
+This application does a 3d wireframe reconstruction of a building from a natural image of a  2D architectural floor plan, and augments the wireframe on a live video feed of the 2D architectural floor plan.
 
 
 Click this You Tube Link for a walkthrough of the project: https://youtu.be/GNs2XaKe7Ug
+
+# Disclaimer
+The 2D architectural floor plans used in this project does not utilize standard architectural floor plan symbols (e.g quarter arcs for doors and parallel lines for windows) but simpler and still aesthetically significant geometric shapes to mark feautures such as doors, windows and walls. Lines are used to mark walls, gridded rectangles for windows and right angled triangles for doors. The symbols were chosen primary to make feauture extraction simplier which suits the theme of the overall goal of the project in developing a proof of concept augmented reality system in matlab. 
 
 # How To Use This Application
 
