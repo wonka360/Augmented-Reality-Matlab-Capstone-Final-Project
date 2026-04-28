@@ -1,5 +1,5 @@
 # Augmented-Reality-Matlab-Capstone-Final-Project
-This application does a 3d wireframe reconstruction of a building from a natural image of a  2D architectural floor plan, and augments the wireframe on a live video feed of the 2D architectural floor plan.
+This application does a 3D wireframe reconstruction of a building from a natural image of a  2D architectural floor plan, and augments the wireframe on a live video feed of the 2D architectural floor plan.
 
 
 Click this You Tube Link for a walkthrough of the project: https://youtu.be/GNs2XaKe7Ug
@@ -53,7 +53,7 @@ Download the folder 'AR Capstone Matlab 2.0' open in either matlab online or mat
 
 3.) The photo taken must show all edges of the paper. This is necessary for document isolation. If this is not done the application may fail.
 
-3.) Open the file 'AR_runtime_script.mlx' in the root directory and then in line 16 change the name of the image file to the corresponding name of the reference image.
+3.) Open the file 'AR_runtime_file.mlx' in the root directory and then in line 16 change the name of the image file to the corresponding name of the reference image.
 
 4.) In line 22 and 27, if a different name was given to the .mat file generated containing camara parameters then change calibrationSession.mat to the new name of the file given.
 
