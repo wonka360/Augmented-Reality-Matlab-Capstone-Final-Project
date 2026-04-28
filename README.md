@@ -62,3 +62,10 @@ Download the folder 'AR Capstone Matlab 2.0' open in either matlab online or mat
 # Possible Errors To Be Encountered and Their Fixes
 
 Undersired Feature Extraction Quality: Expose the floor plan to a more illuminated environment and take a clear picture of the floor plan again. Avoid taking blurry photographs.
+
+# Snapshot of Results
+
+
+<img width="954" height="735" alt="Floor_plan_demo" src="https://github.com/user-attachments/assets/9c733085-84fc-44fc-8073-287003679cd0" />
+
+
