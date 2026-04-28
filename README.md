@@ -65,7 +65,12 @@ Undersired Feature Extraction Quality: Expose the floor plan to a more illuminat
 
 # Snapshot of Results
 
+<img width="699" height="594" alt="Floor_plan_demo1" src="https://github.com/user-attachments/assets/b825aae8-5fae-4d94-a74b-6923a56a8ec3" />
+
+3D reconstructruction of 2D architectural floor plan
 
 <img width="954" height="735" alt="Floor_plan_demo" src="https://github.com/user-attachments/assets/9c733085-84fc-44fc-8073-287003679cd0" />
+
+Overlay of 3D wireframe on 2D architectural floor plan
 
 
