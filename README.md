@@ -57,7 +57,7 @@ Download the folder 'AR Capstone Matlab 2.0' open in either matlab online or mat
 
 4.) In line 22 and 27, if a different name was given to the .mat file generated containing camara parameters then change calibrationSession.mat to the new name of the file given.
 
-5) An input is expected from the user at line 33 for the tagSize (that is width of the tag). The input prompt is at the command terminal which is not very conspicous so the user should take note.
+5.) An input is expected from the user at line 33 for the tagSize (that is width of the tag). The input prompt is at the command terminal which is not very conspicous so the user should take note.
 
 6.) In line 551 change 'DroidCam Source' and instead put the name of the webcamera taking the video feed. Note that the webcamera taking the feed must be thesame camera that took the reference picture.
 
