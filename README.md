@@ -75,4 +75,5 @@ Undersired Feature Extraction Quality: Expose the floor plan to a more illuminat
 
 Overlay of 3D wireframe on 2D architectural floor plan
 
-
+# Note on AI Tools
+The AI assistants Claude, ChatGPT and Gemini were used during the development of this project.  Their role in error debugging, logic refinement and syntax suggestions are duly acknowledged.   
