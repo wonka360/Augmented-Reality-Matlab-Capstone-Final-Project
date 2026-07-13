@@ -19,11 +19,15 @@ function augmentedImage = projectCuboidsToImage(I, intrinsics, tagPose, lines, w
         ];
 
         % Step 4: Flatten edge data for insertShape
-        linesToDraw = [];
-        for j = 1:size(edges,1)
+        numEdges = size(edges, 1);
+        coordWidth = size(projectedPoints, 2);
+        linesToDraw = zeros(numEdges, coordWidth * 2);
+
+        for j = 1:numEdges
             pt1 = projectedPoints(edges(j,1), :);
             pt2 = projectedPoints(edges(j,2), :);
-            linesToDraw = [linesToDraw; pt1 pt2];
+
+            linesToDraw(j, :) = [pt1 pt2];
         end
 
         % Step 5: Draw cuboid onto image
