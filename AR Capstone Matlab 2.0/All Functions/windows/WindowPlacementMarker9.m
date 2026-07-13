@@ -16,24 +16,15 @@ function window_marker = WindowPlacementMarker9(window_lines, filtered_lines)
     line_lengths = sqrt((window_lines(:,3) - window_lines(:,1)).^2 + ...
                         (window_lines(:,4) - window_lines(:,2)).^2);
     
-    vertical_lines = [];
-    horizontal_lines = [];
-    vertical_lengths = [];
-    horizontal_lengths = [];
-    
-    for i = 1:size(window_lines, 1)
-        line = window_lines(i,:);
-        dx = abs(line(1) - line(3));
-        dy = abs(line(2) - line(4));
-        
-        if dx < dy % vertical
-            vertical_lines = [vertical_lines; line];
-            vertical_lengths = [vertical_lengths; line_lengths(i)];
-        else % horizontal
-            horizontal_lines = [horizontal_lines; line];
-            horizontal_lengths = [horizontal_lengths; line_lengths(i)];
-        end
-    end
+    dx = abs(window_lines(:,1) - window_lines(:,3));
+    dy = abs(window_lines(:,2) - window_lines(:,4));
+    % Create a logical mask of matching rows
+    is_vertical = dx < dy;
+    vertical_lines = window_lines(is_vertical,:);
+    vertical_lengths = line_lengths(is_vertical);
+
+    horizontal_lines = window_lines(~is_vertical,:);
+    horizontal_lengths = line_lengths(~is_vertical);
     
     % STEP 2: Determine which orientation has the main window lines
     
