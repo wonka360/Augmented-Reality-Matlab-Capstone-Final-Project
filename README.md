@@ -77,9 +77,9 @@ Overlay of 3D wireframe on 2D architectural floor plan
 
 # References
 
-**Contour Detection Literature and Script**: George Azzopardi and Nicolai Petkov, "A CORF computational model of a simple cell that relies on LGN input outperforms the Gabor function model", 2012, DOI: 10.1007/s00422-012-0486-6
+**Contour Detection Literature and Script**: *George Azzopardi and Nicolai Petkov, "A CORF computational model of a simple cell that relies on LGN input outperforms the Gabor function model", 2012, DOI: 10.1007/s00422-012-0486-6*
 
-**Line Detection Literature and Script**: "LSD: A Fast Line Segment Detector with a False Detection Control" by Rafael Grompone von Gioi, Jeremie Jakubowicz, Jean-Michel Morel, and Gregory Randall, IEEE TPAMI, vol. 32, no. 4, pp. 722-732, April 2010.
+**Line Detection Literature and Script**: *"LSD: A Fast Line Segment Detector with a False Detection Control" by Rafael Grompone von Gioi, Jeremie Jakubowicz, Jean-Michel Morel, and Gregory Randall, IEEE TPAMI, vol. 32, no. 4, pp. 722-732, April 2010.*
 
 # Note on AI Tools
 The AI assistants Claude, ChatGPT and Gemini were used during the development of this project.  Their role in error debugging, logic refinement and syntax suggestions are duly acknowledged.   
