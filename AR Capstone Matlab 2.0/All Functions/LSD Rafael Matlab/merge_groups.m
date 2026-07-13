@@ -1,16 +1,25 @@
 function merged_lines = merge_groups(lines_array, min_distance, min_angle)
-    horizontals = [];
-    verticals = [];
+    
+    verticals   = zeros(size(lines_array, 1), 4);
+    horizontals = zeros(size(lines_array, 1), 4);
 
-    for i = 1:size(lines_array,1)
+    vCount = 0;
+    hCount = 0;
+
+    for i = 1:size(lines_array, 1)
         line = lines_array(i,:);
         angle = get_orientation(line);
+
         if angle > 45 && angle <= 90
-            verticals = [verticals; line];
+            vCount = vCount + 1;
+            verticals(vCount, :) = line;
         else
-            horizontals = [horizontals; line];
+            hCount = hCount + 1;
+            horizontals(hCount, :) = line;
         end
     end
+    verticals(vCount+1:end, :)   = [];
+    horizontals(hCount+1:end, :) = [];
 
     horizontals = sortrows(horizontals, 2);
     verticals = sortrows(verticals, 1);
@@ -23,8 +32,10 @@ function merged = merge_lines(lines, min_distance, min_angle)
         merged = [];
         return;
     end
-
-    groups = {lines(1,:)};
+    
+    groups = cell(1, size(lines, 1));
+    groups{1} = lines(1, :);
+    group_count = 1;
     for i = 2:size(lines,1)
         line_new = lines(i,:);
         added = false;
@@ -43,14 +54,22 @@ function merged = merge_lines(lines, min_distance, min_angle)
             end
         end
         if ~added
-            groups{end+1} = line_new;
+            group_count = group_count + 1;
+            groups{group_count} = line_new;
         end
     end
 
-    merged = [];
+    merged = zeros(length(groups), 4);
+    mCount = 0;
     for k = 1:length(groups)
-        merged = [merged; merge_line_segments(groups{k})];
+        if isempty(groups{k})
+            continue
+        end
+
+        mCount = mCount + 1;
+        merged(mCount, :) = merge_line_segments(groups{k});
     end
+    merged(mCount+1:end, :) = [];
 end
 
 function merged_line = merge_line_segments(group)
