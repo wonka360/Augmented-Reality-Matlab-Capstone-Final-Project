@@ -1,9 +1,10 @@
-function squares = detectSquares(B, imageSize)
+function squares = detectSquares(B)
     % Detect squares and rectangles from boundaries
-    % B: Binary image generared from CORF detection
+    % B: Binary image generated from CORF detection
     
-    squares = {};
-    
+    squares = cell(1, length(B));
+    squareCount = 0;
+
     for k = 1:length(B)
         cnt = B{k};
         
@@ -61,12 +62,12 @@ function squares = detectSquares(B, imageSize)
                         good_angles = sum(angles > 70 & angles < 110);
                         
                         % Check opposite angles sum
-                        angle_sum1 = angles(1) + angles(3);
-                        angle_sum2 = angles(2) + angles(4);
-                        is_parallelogram = abs(angle_sum1 - 180) < 20 && abs(angle_sum2 - 180) < 20;
+                        %angle_sum1 = angles(1) + angles(3);
+                        %angle_sum2 = angles(2) + angles(4);
+                        %is_parallelogram = abs(angle_sum1 - 180) < 20 && abs(angle_sum2 - 180) < 20;
                         
                         % Total angle sum
-                        total_angle = sum(angles);
+                        %total_angle = sum(angles);
                         
                         % STRICTER CRITERIA: Need at least 3 good angles
                         if good_angles >= 3
@@ -78,11 +79,13 @@ function squares = detectSquares(B, imageSize)
                                 % rectangle
                             end
                             
-                            squares{end+1} = approx_clean;
+                            squareCount = squareCount + 1;
+                            squares{squareCount} = approx_clean;
                         end
                     end
                 end
             end
         end
     end
+    squares = squares(1:squareCount);
 end
