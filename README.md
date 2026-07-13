@@ -37,16 +37,22 @@ The 2D architectural floor plan made available here is custom made and it incopo
 
 # Preliminary Setup Before Running the Application
 
-Before running the code in this project it is very important that the camera being used to take the photo or the live video feed be calibrated.
+There are two paths to running this application. If the user wants to run this application without a live camera and without the hassle of calibrating a camera then open "AR_Demo_script.mlx" or "AR_Demo_script.m" and run the script. The user however will just be limited to seeing the 3D wireframe reconstruction overlaid on a static image of the floor plan.
+
+If the user will like to see the 3D wireframe overlaid on a live video feed of the architectural floor plan then open "AR_runtime_file.mlx" or "AR_runtime_file.m".
+
+Before running "AR_runtime_file.mlx" or "AR_runtime_file.m" it is very important that the camera being used to take the photo or the live video feed be calibrated.
 
 Visit https://in.mathworks.com/help/vision/ug/using-the-single-camera-calibrator-app.html for detailed instructions on how to calibrate a camera.
 
 Save the .mat file generated i.e calibrationSession.mat in the root directory 'AR Capstone Matlab 2.0/'
 
+**Note:** The user is strictly advised not to use 'Demo_calibrationSession.mat' if running "AR_runtime_file.mlx" or "AR_runtime_file.m". This file contains the camera parameters of a different camera and if used will result in misallignment between the 3D wireframe reconstruction and the video feed of the floor plan. The inclusion of 'Demo_calibrationSession.mat' is intended for demostration purposes only and is to be used only in "AR_Demo_script.mlx" or "AR_Demo_script.m"
 
 # Things To Do Before Running The Application
 Download the folder 'AR Capstone Matlab 2.0' open in either matlab online or matlab desktop and do the following.
 
+If the user prefers to run the demo scripts 'AR_Demo_script.m' or 'AR_Demo_script.mlx'
 1.) Navigate to the sub directory 'Floor Plan Prints' this folder contains, documents of simplified floor plans. Take a Printout of one of these documents.
 
 2.) Take a photo of the printed floor plan in an illuminated room and store the photo in the root directory 'AR Capstone Matlab 2.0/'. 
