@@ -59,7 +59,7 @@ Download the folder 'AR Capstone Matlab 2.0' open in either matlab online or mat
 
 5.) An input is expected from the user at line 33 for the tagSize (that is width of the tag). The input prompt is at the command terminal which is not very conspicous so the user should take note.
 
-6.) In line 539 change 'DroidCam Source' and instead put the name of the webcamera taking the video feed. Note that the webcamera taking the feed must be thesame camera that took the reference picture.
+6.) In line 599 change 'DroidCam Source' and instead put the name of the webcamera taking the video feed. Note that the webcamera taking the feed must be thesame camera that took the reference picture.
 
 # Possible Errors To Be Encountered and Their Fixes
 
