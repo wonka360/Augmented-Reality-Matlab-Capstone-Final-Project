@@ -45,9 +45,11 @@ function filtered_lines = filterTriangleLines(door_lines, angle_tolerance, lengt
     end
     
     % Group lines by angle similarity
-    groups = cell(0);
     assigned = false(num_lines, 1);
     
+    groups = cell(1, length(assigned));
+    groupCount = 0;
+
     for i = 1:num_lines
         if assigned(i)
             continue;
@@ -66,10 +68,12 @@ function filtered_lines = filterTriangleLines(door_lines, angle_tolerance, lengt
         valid_lines = similar_angles(lengths(similar_angles) >= length_ratio_thresh * max_length_in_group);
         
         if ~isempty(valid_lines)
-            groups{end+1} = valid_lines;
+            groupCount = groupCount + 1;
+            groups{groupCount} = valid_lines;
             assigned(valid_lines) = true;
         end
     end
+    groups = groups(1:groupCount);
     
     % For each group, select the longest line (most likely the true edge)
     if isempty(groups)
@@ -101,11 +105,11 @@ function filtered_lines = filterTriangleLines(door_lines, angle_tolerance, lengt
     else
         % More than 3 groups - need to select the best 3
         % Strategy: Pick 3 groups with most different angles and longest lengths
-        filtered_lines = selectBestThreeEdges(representative_lines, angles, groups, lengths);
+        filtered_lines = selectBestThreeEdges(representative_lines);
     end
 end
 
-function best_three = selectBestThreeEdges(representative_lines, all_angles, groups, all_lengths)
+function best_three = selectBestThreeEdges(representative_lines)
     % Select 3 edges that are most likely to form a triangle
     % Criteria: Different orientations + longest lines
     
