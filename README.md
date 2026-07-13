@@ -50,9 +50,12 @@ Save the .mat file generated i.e calibrationSession.mat in the root directory 'A
 **Note:** The user is strictly advised not to use 'Demo_calibrationSession.mat' if running "AR_runtime_file.mlx" or "AR_runtime_file.m". This file contains the camera parameters of a different camera and if used will result in misallignment between the 3D wireframe reconstruction and the video feed of the floor plan. The inclusion of 'Demo_calibrationSession.mat' is intended for demostration purposes only and is to be used only in "AR_Demo_script.mlx" or "AR_Demo_script.m"
 
 # Things To Do Before Running The Application
-Download the folder 'AR Capstone Matlab 2.0' open in either matlab online or matlab desktop and do the following.
+Download the folder 'AR Capstone Matlab 2.0' open in either MATLAB online or MATLAB desktop.
 
-If the user prefers to run the demo scripts 'AR_Demo_script.m' or 'AR_Demo_script.mlx'
+If the user prefers to run the demo scripts 'AR_Demo_script.m' or 'AR_Demo_script.mlx' little is required of the user. Just run the script directly. An input is however required of the user(line 8), the user will be prompted from the command terminal and is expected to enter a number 1 or 2, to select between the two reference images (of the floor plan) provided.
+
+However if the user wants to run 'AR_run_time_file.mlx' or 'AR_run_time_file.m' then do the following.
+
 1.) Navigate to the sub directory 'Floor Plan Prints' this folder contains, documents of simplified floor plans. Take a Printout of one of these documents.
 
 2.) Take a photo of the printed floor plan in an illuminated room and store the photo in the root directory 'AR Capstone Matlab 2.0/'. 
