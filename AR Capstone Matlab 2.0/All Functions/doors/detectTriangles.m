@@ -1,6 +1,9 @@
 function triangles = detectTriangles(B, imageSize)
-    triangles = {};
     
+    
+    triangles = cell(1, length(B));
+    triangleCount = 0;
+
     for k = 1:length(B)
         cnt = B{k};
         
@@ -118,6 +121,8 @@ function triangles = detectTriangles(B, imageSize)
         triangle_data.area = area;
         triangle_data.orientation = orientation_str;
         triangle_data.min_width = min_width;
-        triangles{end+1} = triangle_data;
+        triangleCount = triangleCount + 1;
+        triangles{triangleCount} = triangle_data;
     end
+    triangles = triangles(1:triangleCount);
 end
