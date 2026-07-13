@@ -5,7 +5,7 @@ This application does a 3D wireframe reconstruction of a building from a natural
 Click this You Tube Link for a walkthrough of the project: https://youtu.be/GNs2XaKe7Ug
 
 # Disclaimer
-The 2D architectural floor plans used in this project do not utilize standard architectural floor plan symbols (e.g quarter arcs for doors and parallel lines for windows) but simpler and still aesthetically significant geometric shapes to mark features such as doors, windows and walls. Lines are used to mark walls, gridded rectangles for windows and right angled triangles for doors. The symbols were chosen primary to make feature extraction simplier which suits the theme of the overall goal of the project in developing a proof of concept augmented reality system in matlab. 
+The 2D architectural floor plans used in this project do not utilize standard architectural floor plan symbols (e.g quarter arcs for doors and parallel lines for windows) but simpler and still aesthetically significant geometric shapes to mark features such as doors, windows and walls. Lines are used to mark walls, gridded rectangles for windows and right angled triangles for doors. The symbols were chosen primary to make feature extraction simplier which suits the theme of the overall goal of the project in developing a proof of concept augmented reality system in MATLAB. 
 
 # Brief Outline of Workflow Augmented Reality System
 The 2D architectural floor plan made available here is custom made and it incoporates simple gemotric shapes to mark features and an april tag for camera pose estimation.
